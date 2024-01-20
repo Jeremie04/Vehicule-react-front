@@ -1,12 +1,13 @@
 import React from 'react'
-import ListAnnonce from '../components/ListAnnonce'
+import AnnonceFav from '../components/AnnonceFav'
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
 
 import "../assets/css/styles.min.css"
+import img from "../assets/images/products/s4.jpg"
 
 
-const Historique = () => {
+const Favoris = () => {
   return (
        
     <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
@@ -14,13 +15,14 @@ const Historique = () => {
         <Sidebar />
 
         <div className="body-wrapper">
-            <Header title="Historique de vos annonces"/>
+            <Header title="Vos Annonces Favoris"/>
 
             <div className="container-fluid">
-
-                <ListAnnonce/>
-                <ListAnnonce/>
-                <ListAnnonce/>
+                <div className="row">
+                    <AnnonceFav nom = {"Head Phone"} prix={1500} img={img}/>
+                    <AnnonceFav nom = {"Head Phone"} prix={1500} img={img}/>
+                    <AnnonceFav nom = {"Head Phone"} prix={1500} img={img}/>
+                </div>
             </div>
         </div>
 
@@ -28,4 +30,4 @@ const Historique = () => {
   )
 }
 
-export default Historique
+export default Favoris

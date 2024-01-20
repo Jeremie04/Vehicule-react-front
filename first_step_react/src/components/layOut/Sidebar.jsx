@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo from "../../assets/images/logos/dark-logo.svg" ;
+import logo from "../../assets/images/logos/auto.png" ;
 
 const menus = [
   {
@@ -23,29 +23,26 @@ const menus = [
 
 const Sidebar = () => {
   return (
-        <aside class="left-sidebar">
+        <aside className="left-sidebar">
             <div>
-                <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="./index.html" class="text-nowrap logo-img">
-                        <img src={logo} width="180" alt="" />
+                <div className="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="./index.html" className="text-nowrap logo-img justify-content-center">
+                        <img src={logo} width="100%" alt="" />
                     </a>
-                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-                        <i class="ti ti-x fs-8"></i>
-                    </div>
                 </div>
-                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                <nav className="sidebar-nav scroll-sidebar" data-simplebar="">
                     <ul id="sidebarnav">
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">Annonce</span>
+                        <li className="nav-small-cap">
+                            <i className="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span className="hide-menu">Annonce</span>
                         </li>
                         {menus.map((menu, index) => (
                             <li key={index} className="sidebar-item">
-                                <a class="sidebar-link" href={menu.url} aria-expanded="false">
+                                <a className="sidebar-link" href={menu.url} aria-expanded="false">
                                     <span>
-                                        <i class={menu.icon}></i>
+                                        <i className={menu.icon}></i>
                                     </span>
-                                    <span class="hide-menu">{menu.title}</span>
+                                    <span className="hide-menu">{menu.title}</span>
                                 </a>
                             </li>
                         ))}
