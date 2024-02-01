@@ -58,11 +58,11 @@ const Accueil = () => {
                       </div>
                       <div className="col-md-3">
                         <label for="exampleInputEmail1" class="form-label">Prix maximum</label>
-                        <input type="date" name="dateMax" className="form-control"/>
+                        <input type="number" name="dateMax" className="form-control"/>
                       </div>
                       <div className="col-md-3">
                         <label for="exampleInputEmail1" class="form-label">Date minimum</label>
-                        <input type="date" name="dateMin" className="form-control"/>
+                        <input type="number" name="dateMin" className="form-control"/>
                       </div>
                     </div>
                 </div>
