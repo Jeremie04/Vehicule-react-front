@@ -1,9 +1,53 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './Message.css'
+import '../assets/css/Message.css'
 
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
+import Contact from '../components/message/Contact'
+import MessageItem from '../components/message/MessageItem'
+
+const contacts = [
+  {
+    nom: "John Doe",
+    date: "2022-01-21",
+    lastMessage: "Salut, comment ça va ?",
+  },
+  {
+    nom: "Jane Smith",
+    date: "2022-01-20",
+    lastMessage: "Bonjour ! J'ai reçu ton message.",
+  },
+  {
+    nom: "Bob Johnson",
+    date: "2022-01-19",
+    lastMessage: "Hey, à quelle heure la réunion demain ?",
+  },
+];
+
+const messages = [
+  {
+    text: "Hello!",
+    time: "12:00 PM | Aug 13",
+    user: false,
+  },
+  {
+    text: "Hi there!",
+    time: "12:05 PM | Aug 13",
+    user: true, 
+  },
+  {
+    text: "How are you?",
+    time: "12:10 PM | Aug 13",
+    user: false,
+  },
+  {
+    text: "I'm good, thanks!",
+    time: "12:15 PM | Aug 13",
+    user: true,
+  },
+];
+
 
 const Message = props => {
   return (
@@ -19,171 +63,31 @@ const Message = props => {
                     <div className="col-5 px-0">
                     <div className="bg-white">
 
-                        <div className="bg-gray px-4 py-2 bg-light">
-                        <p className="h5 mb-0 py-1">Recent</p>
-                        </div>
-
                         <div className="messages-box">
-                        <div className="list-group rounded-0">
-                            <a className="list-group-item list-group-item-action active text-white rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">25 Dec</small>
-                                </div>
-                                <p className="font-italic mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
+                            <div className="list-group rounded-0">
+                                {contacts.map((contact, index) => (
+                                    <Contact key={index} nom={contact.nom} date={contact.date} lastMessage={contact.lastMessage} />
+                                ))}
                             </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">14 Dec</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur. incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">9 Nov</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">18 Oct</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">17 Oct</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">2 Sep</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-1">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">30 Aug</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                            <a href="#" className="list-group-item list-group-item-action list-group-item-light rounded-0">
-                            <div className="media"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                                <div className="media-body ml-4">
-                                <div className="d-flex align-items-center justify-content-between mb-3">
-                                    <h6 className="mb-0">Jason Doe</h6><small className="small font-weight-bold">21 Aug</small>
-                                </div>
-                                <p className="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                </div>
-                            </div>
-                            </a>
-
-                        </div>
                         </div>
                     </div>
                     </div>
                     {/* <!-- Chat Box--> */}
                     <div className="col-7 px-0">
                     <div className="px-4 py-5 chat-box bg-white">
-                        {/* <!-- Sender Message--> */}
-                        <div className="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                            <div className="media-body ml-3">
-                                <div className="bg-light rounded py-2 px-3 mb-2">
-                                <p className="text-small mb-0 text-muted">Test which is a new approach all solutions</p>
-                                </div>
-                                <p className="small text-muted">12:00 PM | Aug 13</p>
-                            </div>
-                        </div>
-
-                        {/* <!-- Reciever Message--> */}
-                        <div className="media w-50 ml-auto mb-3">
-                            <div className="media-body">
-                                <div className="bg-primary rounded py-2 px-3 mb-2">
-                                <p className="text-small mb-0 text-white">Test which is a new approach to have all solutions</p>
-                                </div>
-                                <p className="small text-muted">12:00 PM | Aug 13</p>
-                            </div>
-                        </div>
-
-                        <div className="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                        <div className="media-body ml-3">
-                            <div className="bg-light rounded py-2 px-3 mb-2">
-                            <p className="text-small mb-0 text-muted">Test, which is a new approach to have</p>
-                            </div>
-                            <p className="small text-muted">12:00 PM | Aug 13</p>
-                        </div>
-                        </div>
-
-                        <div className="media w-50 ml-auto mb-3">
-                        <div className="media-body">
-                            <div className="bg-primary rounded py-2 px-3 mb-2">
-                            <p className="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
-                            </div>
-                            <p className="small text-muted">12:00 PM | Aug 13</p>
-                        </div>
-                        </div>
-
-                        <div className="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" className="rounded-circle"/>
-                        <div className="media-body ml-3">
-                            <div className="bg-light rounded py-2 px-3 mb-2">
-                            <p className="text-small mb-0 text-muted">Test, which is a new approach</p>
-                            </div>
-                            <p className="small text-muted">12:00 PM | Aug 13</p>
-                        </div>
-                        </div>
-
-                        <div className="media w-50 ml-auto mb-3">
-                        <div className="media-body">
-                            <div className="bg-primary rounded py-2 px-3 mb-2">
-                            <p className="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
-                            </div>
-                            <p className="small text-muted">12:00 PM | Aug 13</p>
-                        </div>
-                        </div>
+                        {/* <!-- Sender Messages--> */}
+                        {messages.map((message, index) => (
+                            <MessageItem key={index} text={message.text} dateTime={message.time} isuser ={message.user} />
+                        ))}
 
                     </div>
 
                     <form action="#" className="bg-light">
                         <div className="input-group">
-                        <input type="text" placeholder="Type a message" aria-describedby="button-addon2" className="form-control rounded-0 border-0 py-4 bg-light"/>
-                        <div className="input-group-append">
-                            <button id="button-addon2" type="submit" className="btn btn-outline-primary m-3"> <i className="ti ti-send"></i></button>
-                        </div>
+                            <input type="text" placeholder="Type a message" aria-describedby="button-addon2" className="form-control rounded-0 border-0 py-4 bg-light"/>
+                            <div className="input-group-append">
+                                <button id="button-addon2" type="submit" className="btn btn-outline-primary m-3"> <i className="ti ti-send"></i></button>
+                            </div>
                         </div>
                     </form>
 

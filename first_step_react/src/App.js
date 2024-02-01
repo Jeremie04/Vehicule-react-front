@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route ,Routes } from 'react-router-dom';
 
 import Accueil from './pages/Accueil';
 import DetailsAnnonce from './pages/DetailsAnnonce';
-import Message from './pages/Message2';
+import Message from './pages/Message';
 import Login from './pages/Login';
 import Historique from './pages/Historique';
 import Favoris from './pages/Favoris';
