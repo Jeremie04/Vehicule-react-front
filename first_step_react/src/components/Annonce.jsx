@@ -23,8 +23,9 @@ const Annonce = props => {
                     </h7>
                     <h7 className="fw-semibold fs-4">{props.annonce.utilisateur.nomUtilisateur} {props.annonce.utilisateur.prenom}</h7>
                     <ul className="list-unstyled d-flex align-items-center mb-0">
-                        <Link  className="me-1" href="javascript:void(0)"> 
-                            <i className="ti ti-star text-warning"></i>
+                        <Link to={`/details-annonce/${props.annonce.idAnnonce}`} className="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
+                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart">
+                                <i className="ti ti-eye fs-4"></i>
                         </Link>
                     </ul>
                 </div>
