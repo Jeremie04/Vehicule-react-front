@@ -16,6 +16,17 @@ async function avoirAnnonce() {
     }
 }
 
+
+async function avoirAnnonceById(idAnnonce) {
+    try {
+        const response = await axios.get(ApiUrl+'/annonce/listesById/' + idAnnonce);
+        return response.data; 
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'annonce par identifiant:', error);
+        return null;
+    }
+}
+
 async function avoirHistorique() {
     try {
         const response = await axios.get(ApiUrl+'/annonce/mesHistoriques');
@@ -30,4 +41,6 @@ async function avoirHistorique() {
         return [];
     }
 }
-export default {avoirAnnonce,avoirHistorique};
+
+export default {avoirAnnonce,avoirHistorique, avoirAnnonceById};
+
