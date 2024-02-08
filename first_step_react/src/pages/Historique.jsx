@@ -5,6 +5,14 @@ import Sidebar from '../components/layOut/Sidebar'
 
 import "../assets/css/styles.min.css"
 
+const [meshistoriques, setHistorique] = useState([]);
+useEffect(() => {
+    const fetchData = async () => {
+        const annonceData = await avoirHistorique();
+        setHistorique(annonceData);
+    };
+    fetchData();
+}, []);
 
 const Historique = () => {
   return (
@@ -17,10 +25,12 @@ const Historique = () => {
             <Header title="Historique de vos annonces"/>
 
             <div className="container-fluid">
-
-                <ListAnnonce/>
-                <ListAnnonce/>
-                <ListAnnonce/>
+              <div className="row">
+              {meshistoriques.map(histo => (
+                  // <option key={marque.id} value={marque.id}>{marque.nom_Marque}</option>
+                  <Historique annonce={histo}  img={img} />
+              ))}
+              </div>        
             </div>
         </div>
 
