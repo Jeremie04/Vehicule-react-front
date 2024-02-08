@@ -15,12 +15,17 @@ const Annonce = props => {
                         className="ti ti-eye fs-4"></i></Link>
             </div>
             <div className="card-body pt-3 p-4">
-                <h6 className="fw-semibold fs-4">{props.nom}</h6>
-                <div className="d-flex align-items-center justify-content-between">
-                    <h6 className="fw-semibold fs-4 mb-0">{props.prix} Ar
+                <h6 className="fw-semibold fs-4 mb-0">{props.annonce.sousModele.modele.marque.nom_Marque} 
                     </h6>
+                
+                <div className="d-flex align-items-center justify-content-between">
+                    <h7 className="fw-semibold fs-4 mb-0">{props.annonce.dateAnnonce} 
+                    </h7>
+                    <h7 className="fw-semibold fs-4">{props.annonce.utilisateur.nomUtilisateur} {props.annonce.utilisateur.prenom}</h7>
                     <ul className="list-unstyled d-flex align-items-center mb-0">
-                        <li><a className="me-1" href="javascript:void(0)"><i className="ti ti-star text-warning"></i></a></li>
+                        <Link  className="me-1" href="javascript:void(0)"> 
+                            <i className="ti ti-star text-warning"></i>
+                        </Link>
                     </ul>
                 </div>
             </div>
@@ -30,9 +35,10 @@ const Annonce = props => {
 }
 
 Annonce.propTypes = {
-    nom : PropTypes.string.isRequired,
+    // nom : PropTypes.string.isRequired,
     img : PropTypes.string.isRequired,
-    prix : PropTypes.string.isRequired,
+    // prix : PropTypes.string.isRequired,
+    annonce : PropTypes.object,
 }
 
 export default Annonce
