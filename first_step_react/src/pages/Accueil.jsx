@@ -100,12 +100,14 @@ const Accueil = () => {
                         </select>
                       </div>
                       <div className="col-md-3">
-                        <label className="form-label">Prix maximum</label>
-                        <input type="date" name="dateMax" className="form-control"/>
+
+                        <label for="exampleInputEmail1" class="form-label">Prix maximum</label>
+                        <input type="number" name="dateMax" className="form-control"/>
                       </div>
                       <div className="col-md-3">
-                        <label className="form-label">Date minimum</label>
-                        <input type="date" name="dateMin" className="form-control"/>
+                        <label for="exampleInputEmail1" class="form-label">Date minimum</label>
+                        <input type="number" name="dateMin" className="form-control"/>
+
                       </div>
                     </div>
                 </div>
