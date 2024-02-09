@@ -1,5 +1,6 @@
 import React from 'react'
-import ListAnnonce from '../components/ListAnnonce'
+import { useState } from 'react';
+// import ListAnnonce from '../components/ListAnnonce'
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
 
@@ -27,8 +28,7 @@ const Historique = () => {
             <div className="container-fluid">
               <div className="row">
               {meshistoriques.map(histo => (
-                  // <option key={marque.id} value={marque.id}>{marque.nom_Marque}</option>
-                  <Historique annonce={histo}  img={img} />
+                  <><option key={marque.id} value={marque.id}>{marque.nom_Marque}</option><Historique annonce={histo} img={img} /></>
               ))}
               </div>        
             </div>
