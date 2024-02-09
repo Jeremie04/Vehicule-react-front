@@ -21,7 +21,7 @@ const menus = [
   {
     title: "Messages",
     icon: "ti ti-star text-warning",
-    url: "/favoris-annonce",
+    url: "/mes-messages",
   }
 ];
 

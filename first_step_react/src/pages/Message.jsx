@@ -1,29 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import '../assets/css/Message.css'
 
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
 import Contact from '../components/message/Contact'
 import MessageItem from '../components/message/MessageItem'
-
-const contacts = [
-  {
-    nom: "John Doe",
-    date: "2022-01-21",
-    lastMessage: "Salut, comment ça va ?",
-  },
-  {
-    nom: "Jane Smith",
-    date: "2022-01-20",
-    lastMessage: "Bonjour ! J'ai reçu ton message.",
-  },
-  {
-    nom: "Bob Johnson",
-    date: "2022-01-19",
-    lastMessage: "Hey, à quelle heure la réunion demain ?",
-  },
-];
+import avoirUtilisateurs from '../service/Utilisateur'
+import  { useEffect, useState } from 'react';
 
 const messages = [
   {
@@ -50,6 +33,15 @@ const messages = [
 
 
 const Message = props => {
+  const [utilisateurs, setUtilisateurs] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const utilisateursData = await avoirUtilisateurs();
+            setUtilisateurs(utilisateursData);
+        };
+        fetchData();
+    }, []);
+  
   return (
         <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -65,9 +57,10 @@ const Message = props => {
 
                         <div className="messages-box">
                             <div className="list-group rounded-0">
-                                {contacts.map((contact, index) => (
-                                    <Contact key={index} nom={contact.nom} date={contact.date} lastMessage={contact.lastMessage} />
-                                ))}
+                              <p>{console.log(utilisateurs)}</p>
+                              {utilisateurs.map((user, index) => (
+                                  <Contact key={index} nom={user.nomUtilisateur} prenom={user.prenom} date={"Jeudi 7"} lastMessage="Hello" />
+                              ))}
                             </div>
                         </div>
                     </div>
@@ -99,7 +92,5 @@ const Message = props => {
     </div>
   )
 }
-
-Message.propTypes = {}
 
 export default Message
