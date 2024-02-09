@@ -18,11 +18,11 @@ const menus = [
     icon: "ti ti-star text-warning",
     url: "/favoris-annonce",
   },
-  {
-    title: "Messages",
-    icon: "ti ti-star text-warning",
-    url: "/favoris-annonce",
-  }
+  // {
+  //   title: "Messages",
+  //   icon: "ti ti-star text-warning",
+  //   url: "/favoris-annonce",
+  // }
 ];
 
 
