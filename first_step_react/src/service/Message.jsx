@@ -3,6 +3,7 @@ import ApiUrl from "../api/ApiUrl";
 
 async function avoirMessage(idutilisateur) {
     try {
+        // console.log(ApiUrl+'/messages/'+idutilisateur);
         const response = await axios.get(ApiUrl+'/messages/'+idutilisateur);
         if (Array.isArray(response.data.data)) {
             return response.data.data;
@@ -30,3 +31,4 @@ async function envoieMessage(idutilisateur, message, fichier) {
         return [];
     }
 }
+export default avoirMessage;

@@ -6,6 +6,7 @@ import Sidebar from '../components/layOut/Sidebar'
 import Contact from '../components/message/Contact'
 import MessageItem from '../components/message/MessageItem'
 import avoirUtilisateurs from '../service/Utilisateur'
+import avoirMessage from '../service/Message'
 import  { useEffect, useState } from 'react';
 
 const messages = [
@@ -42,6 +43,24 @@ const Message = props => {
         fetchData();
     }, []);
   
+    const [messages, setMessages] = useState([]);
+    const [selectedUserId, setSelectedUserId] = useState(null);
+
+    useEffect(() => {
+      const fetchMessages = async () => {
+        if (selectedUserId) {
+          const messagesData = await avoirMessage(selectedUserId);
+          setMessages(messagesData);
+        }
+      };
+      fetchMessages();
+    }, [selectedUserId]);
+  
+    const handleContactClick = (userId) => {
+      // console.log(userId)
+      setSelectedUserId(userId);
+    };
+
   return (
         <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -57,9 +76,9 @@ const Message = props => {
 
                         <div className="messages-box">
                             <div className="list-group rounded-0">
-                              <p>{console.log(utilisateurs)}</p>
+                              {/* <p>{console.log(utilisateurs)}</p> */}
                               {utilisateurs.map((user, index) => (
-                                  <Contact key={index} nom={user.nomUtilisateur} prenom={user.prenom} date={"Jeudi 7"} lastMessage="Hello" />
+                                  <Contact key={index} nom={user.nomUtilisateur} prenom={user.prenom} onClick={handleContactClick} id={user.id}/>
                               ))}
                             </div>
                         </div>
@@ -68,11 +87,13 @@ const Message = props => {
                     {/* <!-- Chat Box--> */}
                     <div className="col-7 px-0">
                     <div className="px-4 py-5 chat-box bg-white">
-                        {/* <!-- Sender Messages--> */}
-                        {messages.map((message, index) => (
+                        {messages.length === 0 ? (
+                          <p>Messages vides</p>
+                        ) : (
+                        messages.map((message, index) => (
                             <MessageItem key={index} text={message.text} dateTime={message.time} isuser ={message.user} />
-                        ))}
-
+                            ))
+                            )}
                     </div>
 
                     <form action="#" className="bg-light">
