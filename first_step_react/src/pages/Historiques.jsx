@@ -35,7 +35,7 @@ const Historiques = () => {
             <div className="container-fluid">
               <div className="row">
               {meshistoriques.map(histo => (
-                  <><option key={marque.id} value={marque.id}>{marque.nom_Marque}</option><Historique annonce={histo} img={img} /></>
+                  <Historique annonce={histo} img={img} />
               ))}
               </div>        
             </div>
