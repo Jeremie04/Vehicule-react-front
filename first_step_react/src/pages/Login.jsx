@@ -39,7 +39,7 @@ const Login = () => {
         // console.log("tafiditra!!!");
         console.log(response  .data.response.token);
         sessionStorage.setItem('token', response.data.response.token);
-        navigate('/historique-annonce');
+        navigate('/accueil2');
     } catch (error) {
       console.log(error);
       if (error.response && error.response.data && error.response.data.error) {
@@ -76,7 +76,8 @@ const Login = () => {
                           onChange={(e) => setPass(e.target.value)}/>
                                 </div>
                                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                                <Link to="/liste-annonce" className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2 mt-5 shadow">Sign In</Link>
+                                {/* <Link to="/liste-annonce" className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2 mt-5 shadow">Sign In</Link> */}
+                                <button className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2 mt-5 shadow">SIGN IN</button>
                                 <div className="d-flex align-items-center justify-content-center">
                                   <Link className="text-primary fw-bold ms-2" to="/">Continuer sans connecter</Link>
                                 </div>

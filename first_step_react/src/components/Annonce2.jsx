@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const Annonce = props => {
+const Annonce2 = props => {
   return (
     <div className="col-sm-6 col-xl-4">
         <div className="card overflow-hidden rounded-2">
@@ -10,7 +10,7 @@ const Annonce = props => {
                 <a href="javascript:void(0)"><img src={props.img} className="card-img-top rounded-0"
                         alt="..."/></a>
                 <Link
-                    to={`/details-annonce/${props.annonce.idAnnonce}`}
+                    to={`/details-annonce2/${props.annonce.idAnnonce}`}
                     className="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
@@ -40,11 +40,11 @@ const Annonce = props => {
   )
 }
 
-Annonce.propTypes = {
+Annonce2.propTypes = {
     // nom : PropTypes.string.isRequired,
     img : PropTypes.string.isRequired,
     // prix : PropTypes.string.isRequired,
     annonce : PropTypes.object,
 }
 
-export default Annonce
+export default Annonce2

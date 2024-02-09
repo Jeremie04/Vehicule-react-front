@@ -1,8 +1,14 @@
 import axios from "axios";
 import ApiUrl from "../api/ApiUrl";
-async function avoirHistorique() {
+
+async function avoirHistorique(token) {
     try {
-        const response = await axios.post(ApiUrl+'/annonce/mesHistoriques');
+        const headers = {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        };
+      console.log("huhu"+ApiUrl+'/annonce/mesHistoriques');
+        const response = await axios.get(ApiUrl+'/annonce/mesHistoriques', {headers});
         if (Array.isArray(response.data.data)) {
             return response.data.data;
         } else {

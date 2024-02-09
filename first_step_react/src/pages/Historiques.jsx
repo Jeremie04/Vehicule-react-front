@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/layOut/Header'
-import Sidebar from '../components/layOut/Sidebar'
+import Sidebar2 from '../components/layOut/Sidebar2'
 import "../assets/css/styles.min.css"
 
 // import { useEffect,useState } from 'react'
@@ -15,28 +15,33 @@ import avoirHistorique from '../service/HistoriqueService'
 
 const Historiques = () => {
     const [meshistoriques, setHistorique] = useState([]);
+    const token = sessionStorage.getItem("token"); 
+    // console.log(token);
     const fetchData = async () => {
-      const annonceData = await avoirHistorique();
-      setHistorique(annonceData);
-  };
-    useEffect(() => {
+        const annonceData = await avoirHistorique(token);
+        // console.log(annonceData);
         
-        fetchData();
-    }, []);
+        setHistorique(annonceData);
+    };
+      useEffect(() => {
+          fetchData();
+      }, []);
   return (
        
     <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
-        <Sidebar />
+        <Sidebar2 />
 
         <div className="body-wrapper">
             <Header title="Historique de vos annonces"/>
 
             <div className="container-fluid">
               <div className="row">
-              {meshistoriques.map(histo => (
-                  <Historique annonce={histo} img={img} />
+              {meshistoriques.map((histo,index) => (
+                  <Historique key={index} annonce={histo} img={img} />
+                  
               ))}
+
               </div>        
             </div>
         </div>
