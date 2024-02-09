@@ -4,7 +4,7 @@ import Accueil from './pages/Accueil';
 import DetailsAnnonce from './pages/DetailsAnnonce';
 import Message from './pages/Message';
 import Login from './pages/Login';
-import Historique from './pages/Historique';
+import Historiques from './pages/Historiques';
 import Favoris from './pages/Favoris';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/liste-annonce" element={<Accueil />} />
         <Route path="/details-annonce" element={<DetailsAnnonce />} />
         <Route path="/message" element={<Message />} />
-        <Route path="/historique-annonce" element={<Historique />} />
+        <Route path="/historique-annonce" element={<Historiques />} />
         <Route path="/favoris-annonce" element={<Favoris />} />
       </Routes>
     </Router>

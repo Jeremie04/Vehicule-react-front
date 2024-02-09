@@ -1,20 +1,28 @@
 import React from 'react'
-import ListAnnonce from '../components/ListAnnonce'
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
-
 import "../assets/css/styles.min.css"
 
-const [meshistoriques, setHistorique] = useState([]);
-useEffect(() => {
-    const fetchData = async () => {
-        const annonceData = await avoirHistorique();
-        setHistorique(annonceData);
-    };
-    fetchData();
-}, []);
+// import { useEffect,useState } from 'react'
+import { useEffect , useState } from 'react'
 
-const Historique = () => {
+// import avoirHistorique from '../service/Annonce'
+import img from "../assets/images/products/s4.jpg"
+
+import Historique from '../components/Historique'
+import avoirHistorique from '../service/HistoriqueService'
+
+
+const Historiques = () => {
+    const [meshistoriques, setHistorique] = useState([]);
+    const fetchData = async () => {
+      const annonceData = await avoirHistorique();
+      setHistorique(annonceData);
+  };
+    useEffect(() => {
+        
+        fetchData();
+    }, []);
   return (
        
     <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
@@ -38,4 +46,4 @@ const Historique = () => {
   )
 }
 
-export default Historique
+export default Historiques

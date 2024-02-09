@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import img from "../assets/images/products/s4.jpg"
 
 
-const ListAnnonce = props => {
+const Historique = props => {
   return (
     <div className="container-fluid">
         <div className="card overflow-hidden rounded-2">
@@ -34,11 +34,11 @@ const ListAnnonce = props => {
   )
 }
 
-Annonce.propTypes = {
+Historique.propTypes = {
     // nom : PropTypes.string.isRequired,
     img : PropTypes.string.isRequired,
     // prix : PropTypes.string.isRequired,
     annonce : PropTypes.object,
 }
 
-export default ListAnnonce
+export default Historique

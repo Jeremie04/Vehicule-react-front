@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../components/layOut/Header'
 import Sidebar from '../components/layOut/Sidebar'
-
 import "../assets/css/styles.min.css"
 import  { useEffect, useState } from 'react';
 import Annonce from '../components/Annonce'
