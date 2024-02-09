@@ -11,31 +11,22 @@ const menus = [
   {
     title: "Historique Annonce",
     icon: "ti ti-article",
-    url: "/login",
+    url: "/historique-annonce",
   },
   {
     title: "Favoris",
     icon: "ti ti-star text-warning",
     url: "/favoris-annonce",
+  },
+  {
+    title: "Messages",
+    icon: "ti ti-star text-warning",
+    url: "/favoris-annonce",
   }
-  // {
-  //   title: "Messages",
-  //   icon: "ti ti-star text-warning",
-  //   url: "/mes-messages",
-  // {
-  //   title: "Favoris",
-  //   icon: "ti ti-star text-warning",
-  //   url: "/favoris-annonce",
-  // },
-  // {
-  //   title: "Messages",
-  //   icon: "ti ti-star text-warning",
-  //   url: "/favoris-annonce",
-  // }
 ];
 
 
-const Sidebar = () => {
+const Sidebar2 = () => {
   return (
         <aside className="left-sidebar">
             <div>
@@ -67,4 +58,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Sidebar2

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
 import avoirAnnonceById from '../service/AnnonceDetails';
 import Header from '../components/layOut/Header';
-import Sidebar from '../components/layOut/Sidebar';
 import img1 from '../assets/images/products/s1.jpg';
 import img2 from '../assets/images/products/s4.jpg';
 import img3 from '../assets/images/products/s5.jpg';
 import img4 from '../assets/images/products/s7.jpg';
 import img5 from '../assets/images/products/s11.jpg';
 import '../assets/css/styles.min.css';
+import Sidebar2 from '../components/layOut/Sidebar2';
 
-const DetailsAnnonce = () => {
+const DetailsAnnonce2 = () => {
     const imgs = [img1, img2, img3, img4, img5];
     const [id_img, setImg] = useState(0);
 
@@ -38,11 +38,11 @@ const DetailsAnnonce = () => {
 
     return (
         <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
-            <Sidebar />
+            <Sidebar2 />
             <div className="body-wrapper">
                 <Header title="Details" />
                 <div className="container-fluid">
-                    <Link to="/" className="btn btn-secondary">
+                    <Link to="/accueil2" className="btn btn-secondary">
                         Retour
                     </Link>
                     {annonce && (
@@ -135,6 +135,6 @@ const DetailsAnnonce = () => {
     );
 };
 
-DetailsAnnonce.propTypes = {};
+DetailsAnnonce2.propTypes = {};
 
-export default DetailsAnnonce;
+export default DetailsAnnonce2;

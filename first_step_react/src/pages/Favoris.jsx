@@ -1,7 +1,7 @@
 import React from 'react'
 import AnnonceFav from '../components/AnnonceFav'
 import Header from '../components/layOut/Header'
-import Sidebar from '../components/layOut/Sidebar'
+import Sidebar2 from '../components/layOut/Sidebar2'
 
 import "../assets/css/styles.min.css"
 import img from "../assets/images/products/s4.jpg"
@@ -12,7 +12,7 @@ const Favoris = () => {
        
     <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
-        <Sidebar />
+        <Sidebar2 />
 
         <div className="body-wrapper">
             <Header title="Vos Annonces Favoris"/>

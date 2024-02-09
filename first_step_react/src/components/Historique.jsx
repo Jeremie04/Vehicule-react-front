@@ -18,16 +18,26 @@ const Historique = props => {
                 </div>
                 <div className="col-md-9">
                     <div className="card-body pt-3 p-4">
-                        <h6 className="fw-semibold fs-4">{props.annonce.sousModele.modele.marque.nom_Marque} {props.annonce.sousModele.modele.nomModele} {props.annonce.sousModele.nomSous}</h6>
+                        <h6 className="fw-semibold fs-4">{props.annonce.sousModele.modele.marque.nom_Marque}  {props.annonce.sousModele.modele.nomModele}  {props.annonce.sousModele.nomSous}</h6>
                         <div className="d-flex align-items-center justify-content-between">
-                            <h6 className="fw-semibold fs-4 mb-0">{props.annonce.prix}
-                            </h6>
-                            <ul className="list-unstyled d-flex align-items-center mb-0">
-                                <li><a className="me-1" href="javascript:void(0)"><i className="ti ti-star text-warning"></i></a></li>
-                            </ul>
+                            <p><h6 className="fw-semibold fs-4 mb-0">Prix : {props.annonce.prix} Ar
+                            </h6></p>
+                        </div>
+                        <div className="d-flex align-items-center justify-content-between">
+                            <p><h6 className="fw-semibold fs-4 mb-0">Couleur : {props.annonce.couleur} 
+                            </h6></p>
+                        </div>
+                        <div className="card-body p-4">
+                            <Link
+                                to={`/details-annonce2/${props.annonce.idAnnonce}`}
+                                className="btn btn-warning m-1"
+                                >
+                                 Details
+                            </Link>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

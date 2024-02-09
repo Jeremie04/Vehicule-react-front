@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from '../components/layOut/Header'
-import Sidebar from '../components/layOut/Sidebar'
+import Sidebar2 from '../components/layOut/Sidebar2'
 import "../assets/css/styles.min.css"
 import  { useEffect, useState } from 'react';
-import Annonce from '../components/Annonce'
+import Annonce2 from '../components/Annonce2'
 import img from "../assets/images/products/s4.jpg"
 import avoirCategorie from '../service/Categorie'
 import avoirMarque from '../service/Marque';
 import avoirModele from '../service/Modele';
 import avoirAnnonce from '../service/Annonce';
 
-const Accueil = () => {
+const Accueil2 = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
       const fetchData = async () => {
@@ -50,7 +50,7 @@ const Accueil = () => {
   return (
     <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
-        <Sidebar />
+        <Sidebar2 />
 
         <div className="body-wrapper">
             <Header title="Accueil"/>
@@ -117,7 +117,7 @@ const Accueil = () => {
               <div className="row">
               {annonces.map((ann,index) => (
                   // <option key={marque.id} value={marque.id}>{marque.nom_Marque}</option>
-                  <Annonce key={index} annonce={ann}  img={img} />
+                  <Annonce2 key={index} annonce={ann}  img={img} />
               ))}
                 {/* <Annonce nom = {"Head Phone"} prix={1500} img={img} />
                 <Annonce nom = {"Head Phone"} prix={1500} img={img} />
@@ -132,4 +132,4 @@ const Accueil = () => {
   )
 }
 
-export default Accueil
+export default Accueil2
