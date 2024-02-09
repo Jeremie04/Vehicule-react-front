@@ -40,4 +40,4 @@ const Utilisateus = props => {
 
 Utilisateus.propTypes = {}
 
-export default MeUtilisateussage
+export default Utilisateus
