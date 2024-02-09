@@ -11,7 +11,7 @@ const menus = [
   {
     title: "Historique Annonce",
     icon: "ti ti-article",
-    url: "/historique-annonce",
+    url: "/login",
   },
   {
     title: "Favoris",
