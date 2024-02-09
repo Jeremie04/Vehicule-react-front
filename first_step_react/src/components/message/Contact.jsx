@@ -18,6 +18,7 @@ const Contact = props => {
 
 Contact.propTypes = {
     nom : PropTypes.string.isRequired,
+    id : PropTypes.string.isRequired,
     prenom : PropTypes.string.isRequired,
     date : PropTypes.string.isRequired,
     lastMessage : PropTypes.string.isRequired,
