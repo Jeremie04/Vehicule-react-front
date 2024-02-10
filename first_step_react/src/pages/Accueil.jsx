@@ -104,7 +104,7 @@ const Accueil = () => {
                         <input type="number" name="dateMax" className="form-control"/>
                       </div>
                       <div className="col-md-3">
-                        <label  className="form-label">Date minimum</label>
+                        <label  className="form-label">Prix minimum</label>
                         <input type="number" name="dateMin" className="form-control"/>
 
                       </div>
